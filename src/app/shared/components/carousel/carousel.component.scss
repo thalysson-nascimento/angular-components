@@ -1,24 +1,27 @@
 .items-wrapper {
   width: 100vw;
+  overflow: hidden;
 }
 
 .items {
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  overflow-y: hidden;
   scroll-behavior: smooth;
 }
 
 li {
   list-style: none;
+  padding: 1rem;
+  border: 1px solid #999;
+  border-radius: 0.2rem;
+  margin-left: 0.5rem;
 }
 
 .item {
   flex: none;
-  width: 100%;
-  height: 400px;
+  width: 90%;
   scroll-snap-align: start;
 }
 
@@ -26,4 +29,8 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
