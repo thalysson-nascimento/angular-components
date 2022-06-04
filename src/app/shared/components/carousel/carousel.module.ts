@@ -4,7 +4,7 @@ import { CarouselComponent } from './carousel.component';
 
 @NgModule({
   declarations: [CarouselComponent, CarouselProductComponent],
-  exports: [CarouselComponent],
+  exports: [CarouselComponent, CarouselProductComponent],
   providers: [CarouselComponent],
 })
 export class CarouselModule {}
