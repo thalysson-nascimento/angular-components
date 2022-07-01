@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ContentChild,
+  ElementRef,
+  Input,
+  OnInit,
+  TemplateRef,
+} from '@angular/core';
+import { Product } from '../../interfaces/product.interface';
 
 @Component({
   selector: 'app-carousel',
@@ -6,7 +14,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel.component.scss'],
 })
 export class CarouselComponent implements OnInit {
-  constructor() {}
+  @Input()
+  data: Product[] = [];
 
-  ngOnInit() {}
+  @ContentChild('contentTemplateRef')
+  templateRef: TemplateRef<any> | undefined;
+  indexImparesCarousel: Product[] = [];
+
+  constructor(protected elementRef: ElementRef) {}
+
+  ngOnInit() {
+    this.indexImparesCarousel = this.data.filter(({}, indexImpares) => {
+      const totalElement = indexImpares + 1;
+      return totalElement % 2 == 1;
+    });
+  }
+
+  getIndexImpares(indexImpares: any) {
+    const totalElement = indexImpares + 1;
+    return totalElement % 2 == 0;
+  }
+
+  onScroll() {
+    const scrollListProductCarousel = this.elementRef
+      .nativeElement as HTMLElement;
+    const scrollList = scrollListProductCarousel.querySelectorAll('.items');
+  }
 }

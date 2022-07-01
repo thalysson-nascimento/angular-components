@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Required Core Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core.scss";
+
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss";
+
 * {
   padding: 0;
   margin: 0;

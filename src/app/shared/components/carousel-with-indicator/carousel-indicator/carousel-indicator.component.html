@@ -1,0 +1,7 @@
+<div class="indicators-wrapper" *ngIf="indicators.length > 1">
+  <span
+    *ngFor="let indicator of indicators"
+    [class]="getIndicatorClass(indicator.ref)"
+    >{{ indicator.ref }}</span
+  >
+</div>

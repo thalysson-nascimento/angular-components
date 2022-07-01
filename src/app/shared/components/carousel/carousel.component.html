@@ -1,14 +1,15 @@
-<!--carousel-->
-<div class="items-wrapper">
-  <!--carousel__list-product-->
-  <ul class="items">
-    <!--carousel__prodct-->
-    <li class="item"><app-carousel-product></app-carousel-product></li>
-    <li class="item"><app-carousel-product></app-carousel-product></li>
-    <li class="item"><app-carousel-product></app-carousel-product></li>
-    <li class="item"><app-carousel-product></app-carousel-product></li>
-    <li class="item"><app-carousel-product></app-carousel-product></li>
-    <li class="item"><app-carousel-product></app-carousel-product></li>
-    <li class="item"><app-carousel-product></app-carousel-product></li>
+<div class="items-wrapper" data-flickity>
+  <ul class="items" id="listProduct" (scroll)="onScroll()">
+    <li *ngFor="let produto of data" class="item">
+      <app-carousel-product
+        [categoria]="produto.categoria"
+        [titulo]="produto.nome_comercial"
+      ></app-carousel-product>
+      <!-- <ng-container
+        *ngIf="templateRef"
+        [ngTemplateOutlet]="templateRef"
+        [ngTemplateOutletContext]="{ $implicit: rowData }"
+      ></ng-container> -->
+    </li>
   </ul>
 </div>

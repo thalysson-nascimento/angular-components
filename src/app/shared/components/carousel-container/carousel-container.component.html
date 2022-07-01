@@ -1,0 +1,18 @@
+lista com o novo carousel
+<br />
+<br />
+<div class="list-group">
+  <div
+    *ngFor="let rowDetail of data"
+    class="cus-cursor-pointer list-group-item"
+  >
+    <strong>
+      <ng-container
+        *ngIf="headerTemplateRef"
+        [ngTemplateOutlet]="headerTemplateRef"
+        [ngTemplateOutletContext]="{ $implicit: rowDetail }"
+      >
+      </ng-container>
+    </strong>
+  </div>
+</div>

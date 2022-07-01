@@ -1,12 +1,17 @@
 h1 {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   color: #777;
 }
 
 h2 {
-  font-size: 1.25rem;
-  color: #333;
+  font-size: 2.5rem;
+  color: #fff;
 }
 
 .carousel-product {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  min-height: 20rem;
+  background-color: #333;
 }

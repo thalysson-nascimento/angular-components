@@ -1,0 +1,16 @@
+<cdk-virtual-scroll-viewport
+  #carousel
+  orientation="horizontal"
+  class="carousel"
+  itemSize="400"
+  (scrolledIndexChange)="activeElementIndex = $event"
+>
+  <ng-container *cdkVirtualFor="let el of elements">
+    <img src="https://source.unsplash.com/random/600x600" />
+  </ng-container>
+</cdk-virtual-scroll-viewport>
+
+<app-carousel-indicator
+  [current]="activeElementIndex"
+  [length]="elements.length"
+></app-carousel-indicator>
