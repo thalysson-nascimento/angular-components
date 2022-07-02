@@ -6,12 +6,8 @@
 .items {
   display: flex;
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  -webkit-transform: translateZ(0px);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  scroll-behavior: smooth;
+  // scroll-snap-type: x mandatory;
+  // scroll-behavior: smooth;
 }
 
 li {
@@ -22,7 +18,7 @@ li {
 .item {
   flex: none;
   width: 90%;
-  scroll-snap-align: start;
+  // scroll-snap-align: start;
 }
 
 img {
